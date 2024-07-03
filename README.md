@@ -1,17 +1,6 @@
 # Installation Instructions
 Your machine must be equipped with Python 3 and pip. Follow the steps below to set up the environment and install the necessary packages. It's recommended to use a virtual environment for better management of dependencies.
 
-# Setting Up a Virtual Environment
-Execute the following commands to create and activate a virtual environment:
-
-```bash
-python3 -m venv myenv
-source myenv/bin/activate
-```
-# Installing Dependencies
-
-# installing ceplex
-
 # Mise A jours
 ```bash
 sudo apt update
@@ -55,6 +44,18 @@ python setup.py install
 # Install docplex 
 ```bash
 pip install docplex
+```
+# Install NumPy and PySAT packages using pip:
+
+```bash
+pip install python-sat[pblib,aiger]
+pip install python-sat
+ pip install networkx
+```
+
+# command to download instance from site 
+```bash
+wget -r -np -nH --cut-dirs=3 -R index.html https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/
 ```
 
 # If you can't install python3.10 follow this Steps
@@ -131,15 +132,5 @@ sudo apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libns
    python3 --version
 
    ```
-# Install NumPy and PySAT packages using pip:
 
-```bash
-pip install python-sat[pblib,aiger]
-pip install python-sat
- pip install networkx
-```
 
-# command to download instance from site 
-```bash
-wget -r -np -nH --cut-dirs=3 -R index.html https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/
-```
