@@ -53,6 +53,11 @@ pip install python-sat
  pip install networkx
 ```
 
+# installing OrTools 
+```bash
+pip install ortools
+```
+
 # command to download instance from site 
 ```bash
 wget -r -np -nH --cut-dirs=3 -R index.html https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/

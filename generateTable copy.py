@@ -42,30 +42,17 @@ def read_ortools_result(file_path):
         print(f"Error reading {file_path}: {e}")
     return None
 
-# Function to convert time in various formats to seconds
+# Function to convert time in the format '0m8,383s' to seconds
 def time_to_seconds(time_str):
     try:
-        # Match format '0m8,383s' or '0m8.383s'
-        match = re.match(r'(\d+)m(\d+)[,.](\d+)s', time_str)
+        match = re.match(r'(\d+)m([\d\.]+)s', time_str)
         if match:
             minutes = int(match.group(1))
-            seconds = int(match.group(2))
-            milliseconds = int(match.group(3))
-            total_seconds = minutes * 60 + seconds + milliseconds / 1000
+            seconds = float(match.group(2))
+            total_seconds = minutes * 60 + seconds
             return total_seconds
-        # Match format '8.383s'
-        match = re.match(r'(\d+)[,.](\d+)s', time_str)
-        if match:
-            seconds = int(match.group(1))
-            milliseconds = int(match.group(2))
-            total_seconds = seconds + milliseconds / 1000
-            return total_seconds
-        # Match format '8s'
-        match = re.match(r'(\d+)s', time_str)
-        if match:
-            return int(match.group(1))
     except Exception as e:
-        print(f"Error converting time '{time_str}': {e}")
+        print(f"Error converting time: {e}")
     return None
 
 # Function to read real time from time file and convert to seconds
