@@ -142,6 +142,7 @@ top_id = max(top_id, equa_clause.nv)
 
 with RC2(constraints, solver="cadical153") as solver:
     for model in solver.enumerate():
+        print("##################################max-sat#####################################")
         print('Model has cost:', solver.cost)
         # print('Model:', model)
         # print("Values for y_j:")
