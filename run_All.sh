@@ -57,3 +57,32 @@ for ((i = 1; i <= 40; i++)); do
 done
 
 echo "Execution times and outputs for all pmed instances (ParmMax-sat_read_from_file.py) recorded in respective files."
+
+
+
+# Base directories for output and time logs for orTools_Cp-Sat_FromFile.py
+base_output_dir_ortools="./PcMisOrTools"
+mkdir -p "$base_output_dir_ortools"
+
+# Loop through each instance number from 1 to 40 for orTools_Cp-Sat_FromFile.py
+for ((i = 1; i <= 40; i++)); do
+    instance_name="pmed${i}"
+    instance_file="./instances/${instance_name}.txt"
+    
+    # Directories for each instance
+    instance_output_dir="${base_output_dir_ortools}/${instance_name}"
+    mkdir -p "$instance_output_dir"
+    
+    # Output and time files
+    output_file="${instance_output_dir}/output${instance_name}.txt"
+    time_file="${instance_output_dir}/time${instance_name}.txt"
+    
+    # Run the program and log output and time for orTools_Cp-Sat_FromFile.py
+    {
+        time timeout --signal=INT "$timeout_duration" python3 orTools_Cp-Sat_FromFile.py "$instance_file" > "$output_file"
+    } 2> "$time_file"
+    
+    echo "Execution times and outputs for instance $instance_name (orTools_Cp-Sat_FromFile.py) recorded in respective files."
+done
+
+echo "Execution times and outputs for all pmed instances (orTools_Cp-Sat_FromFile.py) recorded in respective files."
