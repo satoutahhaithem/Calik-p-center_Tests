@@ -123,6 +123,13 @@ top_id = max(top_id, equa_clause.nv)
 with RC2(constraints, solver="cadical153") as solver:
     for model in solver.enumerate():
         print('Model has cost:', solver.cost)
+        print('Model:', model)
+        print("Values for y_j:")
+        for j in all_Nodes:
+            print(f"y_{j+1} = {1 if model[y_vars[j] - 1] > 0 else 0}")
+        print("Values for z_k:")
+        for k in index_z_k:
+            print(f"z_{k+1} = {1 if model[z_vars[k] - 1] > 0 else 0}")
         break
 print("Shortest paths:")
 for row in graph:

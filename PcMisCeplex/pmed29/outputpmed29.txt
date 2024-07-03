@@ -1,0 +1,4 @@
+Number of nodes: 600
+Number of edges: 7200
+Additional parameter (p): 120
+###########################################################################

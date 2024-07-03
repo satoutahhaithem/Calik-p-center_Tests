@@ -112,7 +112,7 @@ for i in N:
 
 mdl.add_constraint(mdl.sum(y[j] for j in M) <= p)
 mdl.add_constraint(mdl.sum(z[k] for k in T) == 1)
-
+mdl.context.cplex_parameters.threads = 1 
 
 # Solve the model
 solution = mdl.solve(log_output=False)
