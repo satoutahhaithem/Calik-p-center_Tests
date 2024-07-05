@@ -1,0 +1,3 @@
+Number of nodes: 900
+Number of edges: 16200
+parameter (p): 90
