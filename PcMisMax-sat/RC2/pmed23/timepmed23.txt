@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/home/mis/Bureau/Calik-p-center_Tests/ParmMax-sat_read_from_file.py", line 124, in <module>
+    for model in solver.enumerate():
+  File "/home/mis/Bureau/Calik-p-center_Tests/myenv3.10CeplexNewVersion/lib/python3.10/site-packages/pysat/examples/rc2.py", line 537, in enumerate
+    model = self.compute()
+  File "/home/mis/Bureau/Calik-p-center_Tests/myenv3.10CeplexNewVersion/lib/python3.10/site-packages/pysat/examples/rc2.py", line 475, in compute
+    res = self.compute_()
+  File "/home/mis/Bureau/Calik-p-center_Tests/myenv3.10CeplexNewVersion/lib/python3.10/site-packages/pysat/examples/rc2.py", line 592, in compute_
+    while not self.oracle.solve(assumptions=self.sels + self.sums):
+  File "/home/mis/Bureau/Calik-p-center_Tests/myenv3.10CeplexNewVersion/lib/python3.10/site-packages/pysat/solvers.py", line 747, in solve
+    return self.solver.solve(assumptions)
+  File "/home/mis/Bureau/Calik-p-center_Tests/myenv3.10CeplexNewVersion/lib/python3.10/site-packages/pysat/solvers.py", line 1960, in solve
+    self.status = pysolvers.cadical153_solve(self.cadical, assumptions,
+pysolvers.error: Caught keyboard interrupt
+
+real	60m0,601s
+user	59m59,540s
+sys	0m0,932s

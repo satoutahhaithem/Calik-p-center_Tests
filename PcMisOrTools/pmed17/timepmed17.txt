@@ -1,8 +1,4 @@
-Traceback (most recent call last):
-  File "/home/mis/Bureau/Calik-p-center_Tests/orTools_Cp-Sat_FromFile.py", line 3, in <module>
-    from ortools.sat.python import cp_model
-ModuleNotFoundError: No module named 'ortools'
 
-real	0m0,013s
-user	0m0,013s
-sys	0m0,000s
+real	1m0,139s
+user	1m35,560s
+sys	0m0,975s
