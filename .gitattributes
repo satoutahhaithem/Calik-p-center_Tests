@@ -1,0 +1,1 @@
+max-sat_instance/*.txt filter=lfs diff=lfs merge=lfs -text
