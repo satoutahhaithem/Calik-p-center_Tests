@@ -19,27 +19,76 @@ if [ ! -d "$INSTANCE_DIR" ]; then
   echo "Instance directory $INSTANCE_DIR does not exist."
   exit 1
 fi
-
-# Loop from pmed1 to pmed40
+##########################################Mxcdcl Output ########################################################################""
+Loop from pmed1 to pmed40
 for i in {1..40}
 do
   FILENAME="pmed$i.txt"
   FILEPATH="$INSTANCE_DIR/$FILENAME"
+  output_dir="PcMisMax-sat/Max-cdcl/pmed$i"
+  time_dir="PcMisMax-sat/Max-cdcl/pmed$i"
+  mkdir -p "$output_dir"
+
+
   
   # Check if the file exists
   if [ -f "$FILEPATH" ]; then
-    echo "Processing $FILENAME..."
+    echo "Processing  $FILENAME...max-cdcl"
     { 
-        time timeout "$timeout_duration" "$solver_dir/maxcdcl_static" "$FILEPATH" > "$output_dir/${max_parallel_sessions}_session_maxcdcl_static_output.txt"
-    } 2> "$time_dir/${max_parallel_sessions}_session_maxcdcl_static_time.txt"
+        time timeout "$timeout_duration" "$solver_dir/maxcdcl_static" "$FILEPATH" > "$output_dir/output_$FILENAME"
+    } 2> "$output_dir/time_$FILENAME"
   else
     echo "File $FILENAME does not exist."
   fi
 done
 
 echo "All instances processed."
+##########################################MMaxhs ########################################################################""
+# for i in {1..40}
+# do
+#   FILENAME="pmed$i.txt"
+#   FILEPATH="$INSTANCE_DIR/$FILENAME"
+#   output_dir="PcMisMax-sat/Maxhs/pmed$i"
+
+#   mkdir -p "$output_dir"
 
 
+  
+#   # Check if the file exists
+#   if [ -f "$FILEPATH" ]; then
+#     echo "Processing  $FILENAME...maxhs"
+#     { 
+#         time timeout "$timeout_duration" "$solver_dir/maxhs" "$FILEPATH" > "$output_dir/output_$FILENAME"
+#     } 2> "$output_dir/time_$FILENAME"
+#   else
+#     echo "File $FILENAME does not exist."
+#   fi
+# done
+
+# echo "All instances processed."
+# ##########################################openWbo########################################################################""
+# for i in {1..40}
+# do
+#   FILENAME="pmed$i.txt"
+#   FILEPATH="$INSTANCE_DIR/$FILENAME"
+#   output_dir="PcMisMax-sat/open-wbo/pmed$i"
+
+#   mkdir -p "$output_dir"
+
+
+  
+#   # Check if the file exists
+#   if [ -f "$FILEPATH" ]; then
+#     echo "Processing  $FILENAME...open-wbo"
+#     { 
+#         time timeout "$timeout_duration" "$solver_dir/open-wbo" "$FILEPATH" > "$output_dir/output_$FILENAME"
+#     } 2> "$output_dir/time_$FILENAME"
+#   else
+#     echo "File $FILENAME does not exist."
+#   fi
+# done
+
+# echo "All instances processed."
 
 
 

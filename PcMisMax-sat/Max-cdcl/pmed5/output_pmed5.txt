@@ -7,12 +7,12 @@ c |                                                                             
 c initial UB: 9223372036854775807
 c |  Number of variables:          4089                                         |
 c |  Number of clauses:           31646                                         |
-c |  Parse time:                   0.03 s                                       |
+c |  Parse time:                   0.04 s                                       |
 c Mono: 0, fixed: 0
 c |  Eliminated clauses:           0.04 Mb                                      |
 c Reduced to 1285 vars, 12039 cls (c/v ratio==9.4, grow=0)
 c No iterative elimination performed. (vars=1285, c/v ratio=9.4)
-c |  Simplification time:          0.05 s                                       |
+c |  Simplification time:          0.04 s                                       |
 c |                                                                             |
 c ============================[ Search Statistics ]==============================
 c | Conflicts |          ORIGINAL         |          LEARNT          | Progress |
@@ -52,12 +52,12 @@ c ==============================================================================
 c initCost: 0, fixedBySearch: 0, optimal: 1, maxsat: 260, hardConflicts: 11
 c nbLK: 2, nbSuccLK: 0(0.00%), nbLKup: 475(10.84%), hardens 5 (fixed 238), dynVars 237, shorten: 0
 c restarts              : 2
-c conflicts             : 11             (55 /sec)
-c decisions             : 600            (0.00 % random) (2981 /sec)
-c propagations          : 4381           (21769 /sec)
+c conflicts             : 11             (59 /sec)
+c decisions             : 600            (0.00 % random) (3207 /sec)
+c propagations          : 4381           (23413 /sec)
 c conflict literals     : 26             (80.74 % deleted)
 c Memory used           : 23.00 MB
-c CPU time              : 0.201252 s
+c CPU time              : 0.187116 s
 c nbSimplifyAll         : 0
 c s_propagations        : 3841485     
 c s_cost_ratio          : 87685.12%
