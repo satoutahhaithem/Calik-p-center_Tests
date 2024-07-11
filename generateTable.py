@@ -35,15 +35,16 @@ def read_maxsat_result(file_path):
 
 # Function to read cost from other Max-SAT solvers (Max-cdcl, Maxhs, open-wbo) output file
 def read_other_maxsat_result(file_path):
+    last_value = None
     try:
         with open(file_path, 'r') as f:
             lines = f.readlines()
             for line in lines:
                 if line.startswith("o"):
-                    return float(line.split()[1].strip())
+                    last_value = float(line.split()[1].strip())
     except Exception as e:
         print(f"Error reading {file_path}: {e}")
-    return None
+    return last_value
 
 # Function to read objective value from OR-Tools output file
 def read_ortools_result(file_path):
@@ -97,11 +98,14 @@ def read_time(file_path):
 
 # Function to generate combined LaTeX table for CPLEX, Max-SAT, OR-Tools, Max-cdcl, Maxhs, and open-wbo
 def generate_combined_latex_table():
-    latex_table = "\\begin{table}[ht]\n"
+    latex_table = "\\begin{landscape}\n"
+    latex_table += "\\begin{table}[t]\n"
     latex_table += "\\centering\n"
-    latex_table += "\\caption{Summary of CPLEX, Max-SAT, OR-Tools, Max-cdcl, Maxhs, and open-wbo results}\n"
-    latex_table += "\\hspace*{-4cm}\\resizebox{1.7\\linewidth}{!}{\n"
-    latex_table += "\\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|} \\hline\n"
+    latex_table += "\\vspace{-0.4cm}\n"
+    latex_table += "\\small\n"
+    latex_table += "\\hspace*{-3cm}\n"
+    latex_table += "\\resizebox{1.3\\linewidth}{!}{\n"
+    latex_table += "\\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|} \\hline\n"
     latex_table += "Instance & CPLEX Obj. Value & CPLEX Time (s) & Max-SAT Cost & Max-SAT Time (s) & OR-Tools Obj. Value & OR-Tools Time (s) & Max-cdcl Cost & Max-cdcl Time (s) & Maxhs Cost & Maxhs Time (s) & open-wbo Cost & open-wbo Time (s) \\\\ \\hline\n"
     
     for i in range(1, 41):  # Instances from pmed1 to pmed40
