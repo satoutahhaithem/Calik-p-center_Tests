@@ -1,0 +1,183 @@
+c MaxHS 4.0.0
+c Instance: max-sat_instance/pmed7.txt
+c Parameter Settings
+c ============================================
+c  A: General MaxHS Options
+c   fbeq = false, printOptions = true, printBstSoln = false, printSoln = false,
+c   printSoln-new-format = true, version = false, abstract-cores2greedy = false, tolerance = 1e-06,
+c   mem-lim = 2147483647, coretype = 0, cpu-lim = 2147483647, verb = 1,
+c   sverb = 0,
+c 
+c  B: MaxHS with abstractions Options
+c   abstract = true, 1st-abstract-gap = 5, abstract-gap = 1, exhaust-cpu-lim = 3,
+c   abs-cpu = 256, abstract-max-ave-size = 100, abstract-max_core_size = 1000, abstract-min-cores = 2,
+c   cplex-greedy = 0, abstract-greedy_cores = 2, abstract-cplex_cores = 2, abstract-minsize = 2,
+c  
+c  C: Disjoint Phase Options
+c   dsjnt = true, dsjnt-cpu-lim = 30, dsjnt-mus-cpu-lim = 10,
+c 
+c  D: Seeding Options
+c   seed-learnts = true, all-seeded_2nd_abs_cpu = 240, all-seeded-1st-abs-cpu = 60, all-seeded-1st-cplex-cpu = 100,
+c   seed_cpu_before_cplex = 200, seed-all-limit = 512, seed-max = 524288, seedtype = 3,
+c  
+c  E: Sequence of Sat Options
+c   lp-harden = true, find-forced = false, improve-model = false, use-ub-mipstart = true,
+c   optcores-cpu-lim = 10, max-cpu-improve-model = 10, max-cpu-before-cplex = 200, relaxfrac = 0.3,
+c   max-size-improve-model = -1, sort-assumps = 0, max-cores-before-cplex = 300, frac-rampup-end = 512,
+c   frac-rampup-start = 128, abstract-assumps = 1, nonopt = 3,
+c 
+c  F: Core Minimization Options
+c   mus-min-red = 0.1, mus-cpu-lim = 2.5, mintype = 1, mverb = 0,
+c  
+c  G: CPLEX Options
+c   cplex-tune = false, cplex-min-ticks = 4, cplex-threads = 1,
+c 
+c  H: CPLEX Solution Pool and Populate Options
+c   cplextime-pop-cpu-lim = 7.5, ub-conflicts = 1, cplex-solnpool-cap = 256, cplex-pop-nsoln = 256,
+c   cplex-populate = 1,
+c 
+c  I: Preprocessing Options
+c   mx-constrain-hs = true, mx-seed-mxes = true, simplify-only = false, wcnf-harden = true,
+c   wcnf-units = true, wcnf-eqs = true, preprocess = true, mx-cpu-lim = 15,
+c   mx-find-mxes = 2, mx-mem-lim = 1536,
+c 
+c  J: Debugging Options
+c   cplex-wrt-model = false, cplex-output = false, cplex-data-chk = true
+c ============================================
+c
+c Instance: max-sat_instance/pmed7.txt
+c Dimacs Vars: 3835
+c Dimacs Clauses: 39370
+c Dimacs Top: 14575
+c HARD: #Clauses = 39203, Total Lits = 3800564, Ave Len = 96.9457 #units = 3
+c SOFT: #Clauses = 170, Total Lits = 170, Ave Len = 1.0000
+c Total Soft Clause Weight (+ basecost): 14574 (+ 0)
+c SOFT%: 0.4318%
+c #distinct weights: 170, mean = 85.7294, std. dev = 49.6315, min = 1, max = 184
+c Total Clauses: 39373
+c Parse time: 0.065061
+c Wcnf Space Required: 14.0000MB
+c ================================
+c transitionWts = [ 2.000000 ] (1)
+c WCNF hardened 0 soft clauses
+c WCNF eqs: found additional units after scc 216 pures 216
+c WCNF units: found 555 units
+c WCNF SCCs: found 0 strongly connected components
+c WCNF removed: 555 variables
+c WCNF removed: 749 hard clauses
+c WCNF removed: 2035 lits from hard clauses
+c WCNF removed: 0 soft clauses
+c WCNF removed: 0 lits from softs clauses
+c WCNF found 8636 redundant hards and 0 duplicate or subsumed softs
+c WCNF mutexes: #mutexes found = 0
+c WCNF mx finder used 170 calls to UP engine
+c WCNF mutexes: original #softs 170 #softs after mx-transforms 170
+c WCNF mutexes: reduction in softs 0
+c After WCNF Simplification
+c HARD: #Clauses = 29815, Total Lits = 2199866, Ave Len = 73.7839
+c SOFT: #Clauses = 170, Total Lits = 170, Ave Len = 1.0000
+c Total Soft Clause Weight (+ basecost): 14574 (+ 0), Dimacs Top = 14575
+c #distinct weights: 170, mean = 85.7294, std. dev = 49.6315, min = 1, max = 184
+c Total Clauses: 29985
+c Wcnf Space Required: 8.8029MB
+c ================================
+c Using IBM CPLEX version 22.1.1.0 under IBM's Academic Initiative licencing program
+c Before solving sat solver has 29815 clauses: 0 redundant, 29815 irredundant.
+c New UB found 184
+c Elapsed time 0.0991
+c Init Bnds: SAT Time 0.0509
+c Init Bnds: LB =0 UB = 184
+c Init Bnds: Forced 48 literals.
+c Eqseed start: sat solver has 21303 clauses: 288 redundant, 21015 irredundant.
+c cadical simplify took 0.0000
+c fixed = 0 substitued = 0 eliminated = 0 total variables removed = 0 clauses in solver = 21325 clauses removed = 0
+c EqSeed: found 62 seedable constraints.
+c EqSeed: 1 cores 61 non-cores 0 mixed-cores 0 ordinary clauses
+c EqSeed: #seeded constraints 62
+c EqSeed: cores            1 Ave length 122.0000
+c EqSeed: non-cores        61 Ave length 2.0000
+c EqSeed: mixed cores      0 Ave length 0.0000
+c EqSeed: ordinary clauses 0 Ave length 0.0000
+c Disjoint Phase
+c Dsjnt: #Cores 1 with total weight 61 LB 61 UB 184
+c Dsjnt: Avg Core Size 110.0000
+c Dsjnt: Time 17.1963
+c **********Iter: 0 Elapsed Time = 17.3068
+c CPLEX: += 60 forced bvars; (0 forced summation outputs)
+c CPLEX: += 63 Average size = 5.6190
+c Cplex solve passed UB = 184.000000 current LB = 0.000000
+c CPLEX returns incumbent with cost 61 and lower bound of 61 time = 0.0004
+c CPLEX found optimal solution to its current model
+c after CPLEX bnds: LB = 61 UB = 184 GAP =123
+c LP Bound delta = 61.000000 ub-lb gap = 123.000000 this iteration is good.
+c finding conflicts from cplex solution
+c Cplex concrete solution yielded 1 new conflicts
+c finding conflicts from greedy
+c Add to greedysolver 61 Forced bvars.
+c New UB found 65
+c Elapsed time 21.0470
+c Add to greedysolver 1 Forced bvars.
+c Greedy: iters=2 concrete conflicts=1 abstract conflicts=0
+c finding conflicts from cplex populated solutions
+c populate found 0 conflicts
+c Finding conflicts from UB
+c UB has 107 unforced true softs (false blits) and 1 unforced false softs (true blits)
+c get_ub_conflicts found 1 new conflicts
+c **********Iter: 1 Elapsed Time = 34.6915
+c CPLEX: += 2 forced bvars; (0 forced summation outputs)
+c CPLEX: += 3 Average size = 108.3333
+c tryharden: softs hardened              105
+c tryharden: softs falsified             0
+c tryharden: softs not in cplex hardened 0
+c tryharden: ordinary vars made true     0
+c tryharden: ordinary vars made false    0
+c tryharden: touts  made true            0
+c tryharden: touts made false            0
+c CPLEX: += 105 forced bvars; (0 forced summation outputs)
+c Cplex solve passed UB = 65.000000 current LB = 61.000000
+c CPLEX returns incumbent with cost 63 and lower bound of 63 time = 0.0004
+c CPLEX found optimal solution to its current model
+c after CPLEX bnds: LB = 63 UB = 65 GAP =2
+c LP Bound delta = 2.000000 ub-lb gap = 2.000000 this iteration is good.
+c finding conflicts from cplex solution
+c New UB found 64
+c Elapsed time 37.1563
+c Cplex concrete solution yielded 1 new conflicts
+c finding conflicts from greedy
+c Add to greedysolver 105 Forced bvars.
+c Greedy: iters=1 concrete conflicts=0 abstract conflicts=0
+c finding conflicts from cplex populated solutions
+c populate found 0 conflicts
+c Finding conflicts from UB
+c UB has 2 unforced true softs (false blits) and 1 unforced false softs (true blits)
+c get_ub_conflicts found 1 new conflicts
+c **********Iter: 2 Elapsed Time = 37.1570
+c CPLEX: += 2 Average size = 2.0000
+c Cplex solve passed UB = 64.000000 current LB = 63.000000
+c CPLEX returns incumbent with cost 64 and lower bound of 64 time = 0.0003
+c CPLEX found optimal solution to its current model
+c after CPLEX bnds: LB = 64 UB = 64 GAP =0
+c Solved by LB >= UB.
+o 64
+s OPTIMUM FOUND
+c Solved: Number of falsified softs = 1
+c SAT: #calls 466
+c SAT: Total time 55.6689
+c SAT: #muser calls 4 (0.0000 % successful)
+c SAT: Minimize time 18.5750 (33.3669%)
+c SAT: Avg constraint minimization 0.0710
+c SAT: number of variables substituted 0
+c GREEDY: #calls 3
+c GREEDY: Total time 0.0000
+c CPLEX: #calls 3
+c CPLEX: Total time 0.0012
+c CPLEX: #constraints 169
+c CPLEX: Avg constraint size 4.5266
+c CPLEX: #non-core constraints 162
+c CPLEX: Ave non-core size 1.3395
+c LP-Bounds: Total time 0.0006
+c LP-Bounds: #calls 3
+c LP-Bounds: Forced 105 variables
+c   hardened softs:              105
+c MEM MB: 105.0000
+c CPU: 37.6106
